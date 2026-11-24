@@ -1,614 +1,500 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans">
-<style type="text/css">
-/* Stolen from Jared stolen from Bach stolen from Theo stolen from Georgia Gkioxari stolen from Sergey stolen from Jon Barron */
-body
-{
-	background-color:#FFFFFF;
-	color:#222222;
-}
-
-a {
-	color: #4682B4;
-	text-decoration:none;
-}
-
-a:focus, a:hover {
-	color: #006400;
-	text-decoration:none;
-}
-
-body,td,th {
-	font-family: Source Sans, Helvetica, sans-serif;
-	line-height: 140%;
-	font-size: 16px
-}
-
-strong {
-	font-family: Source Sans, Helvetica, sans-serif;
-	font-size: 15px
-}
-
-heading {
-	font-family: Source Sans, Helvetica, sans-serif;
-	font-size: 15px;
-	font-weight: 700
-}
-
-li {
-	color: black;
-}
-
-li span {
-	color: black;
-}
-
-hr {
-	border-color: #696969;
-}
-
-div.pub {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	border: 0px;
-	padding: 10px;
-	font-size: 14px;
-}
-
-pre.bib {
-	background-color:#eeeeee;
-	padding: 10px;
-	max-width: 650px;
-	overflow: auto;
-	line-height: normal;
-}
-</style>
-
-<script type="text/javascript" src="hidebib.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Khaled Saab</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="keywords" content="khaled, saab, khaled saab, healthcare ai, healthcare ml, machine learning, artificial intelligence" />
 <meta name="description" content="" />
 <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" />
+<style>
+
+  #khaled-citations {
+    color-scheme: light dark;
+    --paper: light-dark(#fff, #1e1e20);
+    --ink: light-dark(#202326, #f2f0ed);
+    --body-copy: light-dark(#54595c, #c3c5c8);
+    --label: light-dark(#6b6164, #bfb6b9);
+    --venue: light-dark(#853549, #efa8b6);
+    --link: light-dark(#325e80, #a7cce6);
+    --rule: light-dark(#dedcda, #444345);
+    box-sizing: border-box; padding: clamp(6px, 2.4%, 19px);
+  }
+  #khaled-citations * {box-sizing: border-box;}
+  #khaled-citations .pub-sheet {
+    margin: 0 auto; padding: clamp(20px, 4.7%, 38px); max-width: 840px;
+    background: var(--paper); color: var(--ink); border: 1px solid var(--rule);
+    font-family: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  #khaled-citations .pub-heading h2 { font: 500 2rem/1.12 Georgia, "Times New Roman", serif; letter-spacing: -.035em; margin: 0 0 18px; color: var(--ink); }
+  #khaled-citations .pub-group { display: grid; grid-template-columns: auto minmax(0,1fr); column-gap: clamp(16px,4.2%,36px); border-top: 2px solid var(--ink); }
+  #khaled-citations .pub-year {color: var(--body-copy); margin: 22px 0 0; font-family: inherit; font-size: 1rem; font-weight: 500; line-height: 1.3; letter-spacing: .035em;}
+  #khaled-citations article {padding: 20px 0 18px; margin: 0; border-bottom: 1px solid var(--rule); }
+  #khaled-citations article:last-child {border-bottom: 0; padding-bottom: 0;}
+  #khaled-citations .pub-meta {display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 12px; }
+  #khaled-citations .journal, #khaled-citations .preprint {font-size: .91rem; font-weight: 650; }
+  #khaled-citations .journal {color: var(--venue);}
+  #khaled-citations .preprint {color: var(--body-copy);}
+  #khaled-citations .pub-date, #khaled-citations .pub-annotation {font-size: .78rem; color: var(--label);}
+  #khaled-citations h4 {font: 500 clamp(19px, 3.2vw, 24px)/1.2 Georgia,"Times New Roman",serif; letter-spacing: -.018em; margin: 5px 0 7px; }
+  #khaled-citations h4 a {color: var(--ink); text-decoration: none;}
+  #khaled-citations h4 a:hover, #khaled-citations h4 a:focus-visible {text-decoration: underline; text-underline-offset: .13em; text-decoration-thickness: 1px;}
+  #khaled-citations .byline, #khaled-citations .full-byline {font: 400 .88rem/1.55 "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--body-copy); margin: 0; }
+  #khaled-citations strong {color: var(--ink);font-weight: 650;}
+  #khaled-citations details {margin: 0;padding: 0;}
+  #khaled-citations summary {display: block;list-style: none;}
+  #khaled-citations summary::-webkit-details-marker {display: none;}
+  #khaled-citations .disclose {display: inline-block; margin-left: .4em; font-size: .8rem; color: var(--link); text-decoration: underline; text-underline-offset: .17em; }
+  #khaled-citations .disclose::before {content:'▸';display:inline-block;margin-right:4px;}
+  #khaled-citations details[open] .disclose::before {content:'▾';}
+  #khaled-citations details[open] .disclose {margin-left: 0;}
+  #khaled-citations .open-label, #khaled-citations details[open] .byline, #khaled-citations details[open] .closed-label {display: none;}
+  #khaled-citations details[open] .open-label {display: inline;}
+  #khaled-citations .full-byline {margin-top: 7px;}
+  #khaled-citations .pub-annotation {margin-top: 3px;}
+  #khaled-citations .pub-links {display: flex;flex-wrap: wrap;gap: 6px 16px;margin-top: 8px;}
+  #khaled-citations .pub-links a {font-size:.81rem;color:var(--link);text-decoration:underline;text-underline-offset:.18em;}
+  @media (max-width: 520px) {
+    #khaled-citations .pub-group {display: block;}
+    #khaled-citations .pub-year {margin: 14px 0 0;}
+    #khaled-citations article:first-child {padding-top: 9px;}
+  }
+  @media (pointer:coarse) {
+    #khaled-citations summary {min-height:44px;}
+    #khaled-citations .pub-links a {min-height:44px;display:inline-flex;align-items:center;}
+  }
+
+#khaled-citations {padding:0; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+#khaled-citations .pub-sheet {width:100%; max-width:800px; border:0; padding:clamp(18px,4%,32px);}
+#khaled-citations .pub-group + .pub-group {margin-top:22px;}
+#khaled-citations .pub-heading h2 {margin-bottom:15px;}
+#khaled-citations .pub-meta {align-items:baseline;}
+#khaled-citations .pub-meta .citation-detail {font-size:.78rem;color:var(--label);}
+#khaled-citations .pub-meta .recognition {font-weight:600;}
+#khaled-citations .pub-items {min-width:0;}
+#khaled-citations .pub-sheet a {overflow-wrap:anywhere;}
+#khaled-citations .pub-sheet article,#khaled-citations .byline {overflow-wrap:break-word;}
+#khaled-citations .profile {display:grid;grid-template-columns:27% minmax(0,1fr);align-items:start;gap:20px;margin:6px 0 22px;}
+#khaled-citations .profile img {width:100%;height:auto;display:block;}
+#khaled-citations .profile h1 {text-align:center;margin:0 0 .5em;font:400 2rem/1.15 "Helvetica Neue",Helvetica,Arial,sans-serif;}
+#khaled-citations .intro {font:400 1rem/1.45 "Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);}
+#khaled-citations .intro p {margin:0 0 .9em;}
+#khaled-citations .intro a {color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.14em;}
+#khaled-citations .profile-nav {display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;}
+#khaled-citations .news {border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:28px;padding:16px 0;}
+#khaled-citations .news h2 {margin:0;color:var(--venue);font:500 1.15rem/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;}
+#khaled-citations .news ul {margin:10px 0 0;padding-left:1.45rem;}
+#khaled-citations .news li+li {margin-top:3px;}
+@media (max-width:520px) {
+  #khaled-citations .profile {display:block;}
+  #khaled-citations .profile img {width:112px;margin:0 auto 16px;}
+}
+
+html {color-scheme:light dark;} body {margin:0;background:light-dark(#fff,#1e1e20);}</style>
 </head>
-
 <body>
-<table width="800" border="0" align="center" cellpadding="20">
-<tr>
-<td>
-	<table width="100%" align="center" border="0" cellpadding="10">
-	<tr>
-	<td width="28%"><img src="headshot.jpeg" width="100%"></td>
-	<td width="72%" valign="top">
-		<p align="center"><font size="6px">Khaled Saab</font></p>
-
-		<p>I am currently a Member of Technical Staff at OpenAI.  Previously, I was a Research Scientist at Google DeepMind. I received my PhD and MS in Electrical Engineering from Stanford in 2023 and 2019, and BS in Computer Engineering from Georgia Tech in 2017. At Stanford, I was lucky to be advised by  <a href=https://rubinlab.stanford.edu/>Daniel Rubin</a> and <a href=https://cs.stanford.edu/people/chrismre/>Chris R&eacute;</a>.</p> 
-		
-        <p>My current research focuses on accelerating biomedical intelligence.</p>
-      
-		
-		<p align=center>
-			<a href="https://www.linkedin.com/in/khaled-saab-181034122/">LinkedIn</a> &nbsp;&nbsp;&nbsp;
-			<a href="https://scholar.google.com/citations?user=W77CiNUAAAAJ&hl=en">Google Scholar</a> &nbsp;&nbsp;&nbsp;
-			<a href="https://x.com/_khaledsaab">X</a> &nbsp;&nbsp;&nbsp;
-		</p>
-	</td>
-	</tr>
-	</table>
-	
-	<hr />
-	
-	<p>
-		<font color="#B22222", size="4px">News</font>
-		<ul>
-	<li> <span>[October 2026] In <a href="https://doi.org/10.1016/S0140-6736(26)01535-7">our prospective study in <i>The Lancet</i></a>, patients shared their medical histories with AMIE before their primary care visits at Beth Israel Deaconess Medical Center.</span></li>
-	<li> <span>[May 2026] Our <a href="https://www.nature.com/articles/s41591-026-04371-0">multimodal AMIE paper</a> is out in <i>Nature Medicine</i>. AMIE can discuss photos, ECGs, and clinical documents during a diagnostic conversation.</span></li>
-	<li> <span>[April 2026] We introduced <a href="https://arxiv.org/abs/2604.27470">HealthBench Professional</a>, a benchmark built from clinical questions, writing tasks, and research requests that clinicians bring to ChatGPT.</span></li>
-	<li> <span>[February 2026] In <a href="https://doi.org/10.1002/advs.202518656">our <i>Advanced Science</i> paper</a>, we studied how language models can help identify genetic causes of rare diseases.</span></li>
-	<li> <span>[May 2025] <a href="https://arxiv.org/abs/2505.04653">AMIE</a> gains vision!</span></li>
-	<li> <span>[April 2025] <a href="https://www.nature.com/articles/s41586-025-08866-7">AMIE</a> is published in Nature!</span></li>
-	<li> <span>[March 2025] Advancing <a href="https://arxiv.org/abs/2503.06074">AMIE</a> for longitudinal disease management.</span></li>
-        <li> <span>[April 2024] Introducing <a href="https://arxiv.org/abs/2404.18416">Med-Gemini</a>, our latest family of multimodal models that extend the best of Gemini into medicine!</span></li>
-	<li> <span>[January 2024] Announcing <a href="https://arxiv.org/abs/2401.05654">AMIE</a>, a diagnostic conversational LLM that surpassed Primary Care Physicians in conversational quality & diagnostic accuracy in a blind randomized study.</span></li>
-	<li> <span>[September 2023] Submit my PhD dissertation at Stanford!</span></li>
-		</ul>
-	</p>
-	
-	<hr />
-	
-
-<heading>2026</heading>
-
-    <div class="pub">
-        <hpub><a href="https://doi.org/10.1016/S0140-6736(26)01535-7">Conversational diagnostic artificial intelligence in ambulatory primary care: a prospective feasibility study</a></hpub>
-        <a href="https://arxiv.org/abs/2603.08448">[arXiv]</a>
-        <br />
-        Peter G. Brodeur, Jacob M. Koshy, Anil Palepu, <b>Khaled Saab</b>, Ava Homiar, Roma Ruparel, Charles Wu,
-        Ryutaro Tanno, Joseph Xu, Amy Wang, David Stutz, Wei-Hung Weng, Hannah M. Ferrera, David Barrett,
-        Lindsey Crowley, Jihyeon Lee, Spencer E. Rittner, Ellery Wulczyn, Selena K. Zhang, Elahe Vedadi,
-        Christine G. Kohn, Kavita Kulkarni, Vinay Kadiyala, S. Sara Mahdavi, Wendy Du, Jessica M. Williams,
-        David Feinbloom, Renee Wong, Tao Tu, Petar Sirkovic, Alessio Orlandi, Christopher Semturs, Yun Liu,
-        Juraj Gottweis, Dale R. Webster, Joëlle Barral, Katherine Chou, Pushmeet Kohli, Avinatan Hassidim,
-        Yossi Matias, James Manyika, Rob Fields, Jonathan X. Li, Marc L. Cohen, Vivek Natarajan,
-        Mike Schaekermann, Alan Karthikesalingam, Adam Rodman
-        <br />
-        The Lancet 408, 1732–1744 (2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2606.24014">Reinforcement Learning Towards Broadly and Persistently Beneficial Models</a></hpub>
-        <a href="https://openai.com/safety-alignment/beneficial-rl/">[Blog]</a>
-        <br />
-        Akshay V. Jagadeesh, Rahul K. Arora, <b>Khaled Saab</b>, Ali Malik, Mikhail Trofimov, Foivos Tsimpourlas,
-        Johannes Heidecke, Karan Singhal
-        <br />
-        arXiv preprint, June 2026.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41586-026-10764-5">Towards conversational artificial intelligence for disease management</a></hpub>
-        <a href="https://arxiv.org/abs/2503.06074">[arXiv]</a>
-        <br />
-        Valentin Liévin*, Anil Palepu*, Wei-Hung Weng, <b>Khaled Saab</b>, David Stutz, Yong Cheng,
-        Kavita Kulkarni, S. Sara Mahdavi, Joëlle Barral, Dale R. Webster, Katherine Chou, Avinatan Hassidim,
-        Yossi Matias, James Manyika, Ryutaro Tanno, Vivek Natarajan, Adam Rodman, Tao Tu, Alan Karthikesalingam,
-        Mike Schaekermann
-        <br />
-        Nature 655, 1292–1299 (2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41586-026-10644-y">Accelerating scientific discovery with Co-Scientist</a></hpub>
-        <a href="https://arxiv.org/abs/2502.18864">[arXiv]</a>
-        <br />
-        Juraj Gottweis*, Wei-Hung Weng*, Alexander Daryin*, Tao Tu*, Petar Sirkovic*, Artiom Myaskovsky*,
-        Grzegorz Glowaty*, Felix Weissenberger*, Alessio Orlandi*, Dan Popovici, Anil Palepu, Keran Rong,
-        Ryutaro Tanno, <b>Khaled Saab</b>, Fan Zhang, Jacob Blum, Andrew Carroll, Kavita Kulkarni, Nenad Tomašev,
-        Dina Zverinski, Ivor Rendulic, Elahe Vedadi, Florian Hasler, Luka Rimanic, Marina Boia, Ivan Budiselic,
-        Ben Feinstein, Mathias Bellaiche, Tom Sheffer, Jan Freyberg, Jeremy Ratcliff, Ottavia Bertolli,
-        Katherine Chou, Avinatan Hassidim, Burak Gokturk, Amin Vahdat, Yuan Guan, Vikram Dhillon,
-        Eeshit Dhaval Vaishnav, Byron Lee, Tiago R. D. Costa, José R. Penadés, Gary Peltz, Yossi Matias,
-        James Manyika, Demis Hassabis, Yunhan Xu, Pushmeet Kohli, Annalisa Pawlosky, Alan Karthikesalingam,
-        Vivek Natarajan
-        <br />
-        Nature 655, 487–496 (2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41591-026-04371-0">Advancing conversational diagnostic AI with multimodal reasoning</a></hpub>
-        <a href="https://arxiv.org/abs/2505.04653">[arXiv]</a>
-        <a href="https://research.google/blog/amie-gains-vision-a-research-ai-agent-for-multi-modal-diagnostic-dialogue/">[Blog]</a>
-        <br />
-        <b>Khaled Saab*</b>, Chunjong Park*, Tim Strother*, Jan Freyberg*, David G. T. Barrett, Yong Cheng,
-        Wei-Hung Weng, David Stutz, Nenad Tomasev, Anil Palepu, Valentin Liévin, Yash Sharma, Roma Ruparel,
-        Abdullah Ahmed, Elahe Vedadi, Kimberly Kanada, Cian Hughes, Yun Liu, Geoff Brown, Yang Gao, Sean Li,
-        S. Sara Mahdavi, James Manyika, Katherine Chou, Yossi Matias, Avinatan Hassidim, Dale R. Webster,
-        Joëlle Barral, S. M. Ali Eslami, Pushmeet Kohli, Adam Rodman, Vivek Natarajan, Mike Schaekermann, Tao Tu,
-        Alan Karthikesalingam, Ryutaro Tanno*
-        <br />
-        Nature Medicine 32, 1726–1736 (2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2604.27470">HealthBench Professional: Evaluating Large Language Models on Real Clinician Chats</a></hpub>
-        <a href="https://openai.com/index/making-chatgpt-better-for-clinicians/">[Blog]</a>
-        <br />
-        Rebecca Soskin Hicks, Mikhail Trofimov, Dominick Lim, Rahul K. Arora, Foivos Tsimpourlas, Preston Bowman,
-        Michael Sharman, Chi Tong, Kavin Karthik, Arnav Dugar, Akshay Jagadeesh, <b>Khaled Saab</b>,
-        Johannes Heidecke, Ashley Alexander, Nate Gross, Karan Singhal
-        <br />
-        arXiv preprint, April 2026.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://doi.org/10.1002/advs.202518656">Genetic Diagnosis and Discovery Enabled by Large Language Models</a></hpub>
-        <br />
-        Tao Tu*, <b>Khaled Saab*</b>, Weida Liu*, Zhouqing Fang*, Zhuanfen Cheng, Svetolik Spasic, Maja Djurisic,
-        Hiroaki Mohri, Wenlong Ren, Anil Palepu, Juraj Gottweis, Alan Karthikesalingam, Kavita Kulkarni,
-        Annalisa Pawlosky, Devon Bonner, Elijah Kravets, Shruti Marwaha, Hector R. Mendez, Matthew T. Wheeler,
-        Jonathan A. Bernstein, Undiagnosed Diseases Network, Cheng-Yu Tsai, Chen-Chi Wu,
-        Konstantina M. Stankovic, Vivek Natarajan, Gary Peltz
-        <br />
-        Advanced Science 13, e18656 (2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41591-025-04190-9">A large language model for complex cardiology care</a></hpub>
-        <a href="https://arxiv.org/abs/2410.03741">[arXiv]</a>
-        <br />
-        Jack W. O’Sullivan*, Anil Palepu*, <b>Khaled Saab</b>, Wei-Hung Weng, Daniel K. Amponsah, Evaline Cheng,
-        Yong Cheng, Emily Chu, Yaanik Desai, Aly Elezaby, Muhammad Fazal, Tasmeen Hussain, Sneha S. Jain,
-        Daniel Seung Kim, Roy Lan, Jiwen Li, Wilson Tang, Natalie Tapaskar, Victoria Parikh, Ryan Sandoval,
-        Gabriella Spencer-Bonilla, Bryan Wu, Kavita Kulkarni, Philip Mansfield, Dale Webster, Juraj Gottweis,
-        Joelle Barral, Mike Schaekermann, Ryutaro Tanno, S. Sara Mahdavi, Vivek Natarajan, Alan Karthikesalingam,
-        Euan Ashley, Tao Tu
-        <br />
-        Nature Medicine 32, 616–623 (2026).
-    </div>
-
-<heading>2025</heading>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2510.22414">Complementary Human-AI Clinical Reasoning in Ophthalmology</a></hpub>
-        <br />
-        Mertcan Sevgi, Fares Antaki, Abdullah Zafar Khan, Ariel Yuhan Ong, David Adrian Merle, Kuang Hu,
-        Shafi Balal, Sophie-Christin Kornelia Ernst, Josef Huemer, Gabriel T. Kaufmann, Hagar Khalid,
-        Faye Levina, Celeste Limoli, Ana Paula Ribeiro Reis, Samir Touma, Anil Palepu, <b>Khaled Saab</b>,
-        Ryutaro Tanno, Valentin Liévin, Tao Tu, Yong Cheng, Mike Schaekermann, S. Sara Mahdavi, Elahe Vedadi,
-        David Stutz, Vivek Natarajan, Alan Karthikesalingam, Pearse A. Keane, Wei-Hung Weng
-        <br />
-        arXiv preprint, October 2025.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://doi.org/10.1056/AIcs2500025">Exploring Large Language Models for Specialist-Level Oncology Care</a></hpub>
-        <a href="https://arxiv.org/abs/2411.03395">[arXiv]</a>
-        <br />
-        Anil Palepu, Vikram Dhillon, Polly Niravath, Wei-Hung Weng, Preethi Prasad, <b>Khaled Saab</b>,
-        Ryutaro Tanno, Yong Cheng, Hanh Mai, Ethan Burns, Zainub Ajmal, Kavita Kulkarni, Philip Mansfield,
-        Dale Webster, Joelle Barral, Juraj Gottweis, Mike Schaekermann, Sara S. Mahdavi, Vivek Natarajan,
-        Alan Karthikesalingam, Tao Tu
-        <br />
-        NEJM AI 2, AIcs2500025 (2025).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2507.15743">Towards physician-centered oversight of conversational diagnostic AI</a></hpub>
-        <a href="https://research.google/blog/enabling-physician-centered-oversight-for-amie/">[Blog]</a>
-        <br />
-        Elahe Vedadi, David Barrett, Natalie Harris, Ellery Wulczyn, Shashir Reddy, Roma Ruparel,
-        Mike Schaekermann, Tim Strother, Ryutaro Tanno, Yash Sharma, Jihyeon Lee, Cían Hughes, Dylan Slack,
-        Anil Palepu, Jan Freyberg, <b>Khaled Saab</b>, Valentin Liévin, Wei-Hung Weng, Tao Tu, Yun Liu,
-        Nenad Tomasev, Kavita Kulkarni, S. Sara Mahdavi, Kelvin Guu, Joëlle Barral, Dale R. Webster,
-        James Manyika, Avinatan Hassidim, Katherine Chou, Yossi Matias, Pushmeet Kohli, Adam Rodman,
-        Vivek Natarajan, Alan Karthikesalingam, David Stutz
-        <br />
-        arXiv preprint, July 2025.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.biorxiv.org/content/10.1101/2025.07.16.665231v2">Human whole-epigenome modelling for clinical applications with Pleiades</a></hpub>
-        <br />
-        Pouya Niki, Christoforos Nalmpantis, Javkhlan-Ochir Ganbat, Donal Byrne, Pooja Kathail, Ching Fang,
-        Alfred Wong, Andrey Karailiev, Husam Babikir, Anjeet Jhutty, Luca Giacomoni, Francisco M. Marín-Zamora,
-        Arihant Kamdar, Nicholas K. Wang, Will Rowe, Timing Liu, Netanel Loyfer, Robert Sugar,
-        Augustinas Malinauskas, <b>Khaled Saab</b>, Mark Bissell, Dron Hazra, Michael T. Pearce, Archa Jain,
-        Daniel Balsam, Sofia Toniolo, Masud Husain, Sanjay G. Manohar, Sian A. Thompson, Henrik Zetterberg,
-        Hannah Madan, Ivan Koychev, Jonathan C. M. Wan, Ravi Solanki
-        <br />
-        bioRxiv preprint, July 2025 (revised July 2026).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41586-025-08866-7">Towards conversational diagnostic artificial intelligence</a></hpub>
-        <a href="https://arxiv.org/abs/2401.05654">[arXiv]</a>
-        <br />
-        Tao Tu*, Mike Schaekermann*, Anil Palepu*, <b>Khaled Saab</b>, Jan Freyberg, Ryutaro Tanno, Amy Wang,
-        Brenna Li, Mohamed Amin, Yong Cheng, Elahe Vedadi, Nenad Tomasev, Shekoofeh Azizi, Karan Singhal, Le Hou,
-        Albert Webson, Kavita Kulkarni, S. Sara Mahdavi, Christopher Semturs, Juraj Gottweis, Joelle Barral,
-        Katherine Chou, Greg S. Corrado, Yossi Matias, Alan Karthikesalingam, Vivek Natarajan
-        <br />
-        Nature 642, 442–450 (2025).
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2504.02799">
-                Systematic Evaluation of Large Vision-Language Models for Surgical Artificial Intelligence
-            </a>
-        </hpub>
-        <a href="https://anitarau.github.io/surg-vlms-eval/">[Project]</a>
-        <a href="https://github.com/anitarau/SurgBenchKit">[Code]</a>
-        <br />
-	Anita Rau, Mark Endo, Josiah Aklilu, Jaewoo Heo, <b>Khaled Saab</b>, Alberto Paderno, Jeffrey Jopling, F. Christopher Holsinger, Serena Yeung-Levy<br />
-    </div>
-
-<heading>2024</heading>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2404.18416">
-                Capabilities of Gemini Models in Medicine
-            </a>
-        </hpub>
-        <br />
-        <b>Khaled Saab</b>, Tao Tu, Wei-Hung Weng, Ryutaro Tanno, David Stutz, Ellery Wulczyn, Fan Zhang, Tim Strother, Chunjong Park, Elahe Vedadi, Juanma Zambrano Chaves, Szu-Yeu Hu, Mike Schaekermann, Aishwarya Kamath, Yong Cheng, David G.T. Barrett, Cathy Cheung, Basil Mustafa, Anil Palepu, Daniel McDuff, Le Hou, Tomer Golany, Luyang Liu, Jean-baptiste Alayrac, Neil Houlsby, Nenad Tomasev, Jan Freyberg, Charles Lau, Jonas Kemp, Jeremy Lai, Shekoofeh Azizi, Kimberly Kanada, SiWai Man, Kavita Kulkarni, Ruoxi Sun, Siamak Shakeri, Luheng He, Ben Caine, Albert Webson, Natasha Latysheva, Melvin Johnson, Philip Mansfield, Jian Lu, Ehud Rivlin, Jesper Anderson, Bradley Green, Renee Wong, Jonathan Krause, Jonathon Shlens, Ewa Dominowska, S. M. Ali Eslami, Claire Cui, Oriol Vinyals, Koray Kavukcuoglu, James Manyika, Jeff Dean, Demis Hassabis, Yossi Matias, Dale Webster, Joelle Barral, Greg Corrado, Christopher Semturs, S. Sara Mahdavi, Juraj Gottweis, Alan Karthikesalingam, and Vivek Natarajan<br />
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41746-024-01008-9">
-                Towards Trustworthy Seizure Onset Detection Using Workflow Notes
-            </a>
-        </hpub>
-        <a href="https://github.com/khaledsaab/eeg_robustness">
-            [Code]
-        </a>
-        <br />
-        <b>Khaled Saab</b>, Siyi Tang, Mohamed Taha, Christopher Lee-Messer,
-        Christopher R&eacute, and Daniel Rubin <br />
-        npj Digital Medicine, 2024.
-    </div>
-	
-<heading>2023</heading>
-
-    
-
-    <div class="pub">
-        <hpub><a href="https://openreview.net/pdf?id=b8xowIlZ7v">
-                A Case for Reframing Automated Medical Image Classification as Segmentation
-            </a>
-        </hpub>
-        <br />
-        Sarah Hooper, Mayee Chen, <b>Khaled Saab</b>, Kush Bhatia, Curt Langlotz, and Christopher R&eacute <br />
-        Neural Information Processing Systems (NeurIPS), 2023.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2303.09489">
-                Effectively Modeling Time Series with Simple Discrete State Spaces </a>
-        </hpub>
-        <a href="https://github.com/HazyResearch/spacetime">
-            [Code]
-        </a>
-        <br />
-        Michael Zhang*, <b>Khaled Saab*</b>, Michael Poli, Tri Dao, Karan Goel,
-        and
-        Christopher R&eacute <br />
-        International Conference on Learning Representations (ICLR), 2023.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2212.14052">
-                Hungry Hungry Hippos: Towards Language Modeling with State Space Models </a>
-        </hpub>
-        <a href="https://hazyresearch.stanford.edu/blog/2023-01-20-h3">
-            [Blog]
-        </a>
-        <a href="https://github.com/HazyResearch/H3">
-            [Code]
-        </a>
-        <br />
-        Tri Dao*, Dan Fu*, <b>Khaled Saab</b>, Armin Thomas, Atri Rudra,
-        and
-        Christopher R&eacute <br />
-        International Conference on Learning Representations (ICLR), 2023 <font color="red">
-            (Spotlight)</font>.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2211.11176">
-                Spatiotemporal Modeling of Multivariate Signals With Graph Neural Networks
-                and Structured State Space Models
-            </a></hpub>
-        <a href="https://github.com/tsy935/graphs4mer">
-            [Code]
-        </a><br />
-        Siyi Tang, Jared Dunnmon, Liangqiong Qu, <b>Khaled Saab</b>, Tina Baykaner,
-        Christopher Lee-Messer, and Daniel Rubin<br />
-        Conference on Health, Infernece, and Learning (CHIL), 2023 <font color="red">
-            (Best Paper)</font>.
-    </div>
-
-    <heading>2022</heading>
-
-    <div class="pub">
-        <hpub><a href="https://proceedings.mlr.press/v182/saab22a/saab22a.pdf">
-                Reducing Reliance on Spurious Features in Medical Image Classification with
-                Spatial Specificity
-            </a></hpub>
-        <a href="https://github.com/khaledsaab/spatial_specificity">
-            [Code]
-        </a>
-        <a href="https://www.youtube.com/embed/9uDsWp-CEzc">
-            [Video]
-        </a><br />
-        <b>Khaled Saab</b>, Sarah Hooper, Mayee Chen, Michael Zhang, Daniel Rubin, and
-        Christopher R&eacute <br />
-        Machine Learning for Healthcare (MLHC), 2022.
-    </div>
-    
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2104.08336">
-                Self-Supervised Graph Neural Networks for Improved Electroencephalographic
-                Seizure Analysis
-            </a></hpub>
-        <a href="https://github.com/tsy935/eeg-gnn-ssl">
-            [Code]
-        </a>
-        <a href="https://youtu.be/FMEnSYbKkV4">
-            [Video]
-        </a><br />
-        Siyi Tang, Jared Dunnmon, <b>Khaled Saab</b>, Xuan Zhang, Qianying Huang, Florian
-        Dubost, Daniel Rubin, and Christopher Lee-Messer<br />
-        International Conference on Learning Representations (ICLR), 2022.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2203.14960">
-                Domino: Discovering Systematic Errors with Cross-Modal Embeddings
-            </a></hpub>
-        <a href="https://github.com/hazyresearch/domino">
-            [Code]
-        </a>
-        <a href="https://hazyresearch.stanford.edu/blog/2022-04-02-domino">
-            [Blog]
-        </a>
-        <a href="https://iclr.cc/virtual/2022/oral/6149">
-            [Video]
-        </a><br />
-        Sabri Eyuboglu*, Maya Varma*, <b>Khaled Saab*</b>, Jean-Benoit Delbrouck,
-        Christopher Lee-Messer, Jared Dunnmon, James Zou, and Christopher
-        R&eacute <br />
-        International Conference on Learning Representations (ICLR), 2022 <font color="red">
-            (Oral)</font>.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://aclanthology.org/2022.acl-demo.3.pdf">
-                ViLMedic: A Framework for Research at the Intersection of Vision and
-                Language in Medical AI
-            </a></hpub>
-        <a href="https://github.com/jbdel/vilmedic">
-            [Code]
-        </a>
-        <br />
-        Jean-Benoit Delbrouck, <b>Khaled Saab</b>, Maya Varma, Sabri Eyuboglu, Pierre
-        Chambon, Jared Alexander Dunnmon, Juan Manuel Zambrano, Akshay Chaudhari, and Curtis
-        Langlotz<br />
-        Association for Computational Linguistics (ACL) Demo Track, 2022.
-    </div>
-
-    <div class="pub">
-        <hpub><a
-                href="https://www.me.psu.edu/Ray/journalAsokRay/2022/328SaabSaabPhohaZhuRay22.pdf">
-                A multivariate adaptive gradient algorithm with reduced tuning efforts</a>
-        </hpub><br />
-        Samer Saab Jr, <b>Khaled Saab</b>, Shashi Phoha, Minghui Zhu, and Asok Ray<br />
-        Neural Netowrks, 2022.
-    </div>
-
-    <heading>2021</heading>
-
-    <div class="pub">
-        <hpub><a href="https://arxiv.org/abs/2110.13985">
-                Combining Recurrent, Convolutional, and Continuous-time Models with
-                Structured Learned Linear State-Space Layers </a></hpub>
-        <a href="https://hazyresearch.stanford.edu/blog/2022-01-14-s4-3">
-            [Blog]
-        </a>
-        <a href="https://github.com/HazyResearch/state-spaces">
-            [Code]
-        </a>
-        <br />
-        Albert Gu, Isys Johnson, Karan Goel, <b>Khaled Saab</b>, Tri Dao, Atri Rudra,
-        and
-        Christopher R&eacute <br />
-        Neural Information Processing Systems (NeurIPS), 2021.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://rdcu.be/cyl27">
-                Observational Supervision for Medical Image Classification Using Gaze
-                Data</a></hpub>
-        <a href="https://github.com/HazyResearch/observational">
-            [Code]
-        </a>
-        <a href="https://www.youtube.com/embed/va99KCqMbcA?start=60">
-            [Video]
-        </a><br />
-        <b>Khaled Saab</b>, Sarah Hooper, Nimit Sohoni, Jupinder Parmar, Brian Pogatchnik,
-        Sen Wu, Jared Dunnmon, Hongyang Zhang, Daniel Rubin, and Christopher
-        R&eacute <br />
-        Medical Image Computing and Computer Assisted Intervention (MICCAI), 2021 <font
-            color="red">(Early Accept)</font>.
-    </div>
-    
-    <heading>2020</heading>
-
-    <div class="pub">
-        <hpub><a href="https://www.nature.com/articles/s41746-020-0264-0">
-                Weak Supervision as an Efficient Approach for Automated Seizure Detection
-                in Electroencephalography</a></hpub><br />
-        <b>Khaled Saab*</b>, Jared Dunnmon*, Christopher R&eacute, Daniel Rubin, and
-        Christopher Lee-Messer <br />
-        npj Digital Medicine, 2020.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="https://tinyurl.com/y95ctxw9">
-                Cross-Modal Data Programming Enables Rapid Medical Machine Learning</a>
-        </hpub>
-        <a href="https://github.com/HazyResearch/cross-modal-ws-demo">
-            [Code]
-        </a><br />
-        Jared Dunnmon, Alex Ratner, <b>Khaled Saab</b>, Nishit Khandwala, Matthew Markert,
-        Hersh Sagreiya, Rodger Goldman, Christopher Lee-Messer, Matthew Lungren,
-        Daniel Rubin, and Christopher R&eacute <br />
-        Cell Patterns, 2020.
-    </div>
-
-	<heading>2019</heading>
-
-    <div class="pub">
-        <hpub><a href="media/MICCAI_2019.pdf">
-                Doubly Weak Supervisioin of Deep Learning Models for Head CT</a></hpub>
-        <br />
-        <b>Khaled Saab</b>, Jared Dunnmon, Roger Goldman, Alex Ratner, Hersh Sagreiya,
-        Christopher R&eacute, and Daniel Rubin <br />
-        Medical Image Computing and Computer Assisted Intervention (MICCAI), 2019 <font
-            color="red">(Oral)</font>.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="media/ICLR_LLD_2019.pdf">
-                Improving Sample Complexity with Observational Supervision</a></hpub><br />
-        <b>Khaled Saab</b>, Jared Dunnmon, Alex Ratner, Daniel Rubin, and Christopher
-        R&eacute <br />
-        ICLR Limited Labeled Data Workshop, 2019 <font color="red">(Spotlight)</font>.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_CISS2019.pdf">
-                Shuffled Linear Regression with Erroneous Observations</a></hpub><br />
-        Samer Saab, <b>Khaled Saab</b>, and Samer Saab Jr. <br />
-        IEEE Conference on Information Sciences and Systems, 2019.
-    </div>
-
-    <heading>2017</heading>
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_SSP2017.pdf">
-                Protecting Bare-metal Embedded Systems with Privilege Overlays</a>
-        </hpub>
-        <br />
-        Abraham Clements, Naif Almakhdhub, <b>Khaled Saab</b>, Prashast Srivastava,
-        Jinkyu Koo, Saurabh Bagchi, and Mathias Payer<br />
-        IEEE Symposium on Security and Privacy, 2017.
-    </div>
-    
-    <heading>2016</heading>
-
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_SPL2016.pdf">
-                A Stochastic Newton-Raphson Method with Noisy Function Measurements</a>
-        </hpub><br />
-        <b>Khaled Saab</b> and Samer Saab Jr. <br />
-        IEEE Signal Processing Letters, 2016.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_PLANS2016.pdf">
-                Application of an Optimal Stochastic Newton-Raphson
-                Technique to Triangulation-Based Localization Systems</a></hpub><br />
-        <b>Khaled Saab</b> and Samer Saab Jr. <br />
-        IEEE/ION Position, Location and Navigation Symposium, 2016.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_URTC2016.PDF">
-                Estimation of Cluster Centroids in Presence of Noisy Observations</a>
-        </hpub>
-        <br />
-        <b>Khaled Saab</b> <br />
-        IEEE MIT Undergraduate Research Technology Conference, 2016.
-    </div>
-
-    <div class="pub">
-        <hpub><a href="media/IEEE_J_Photonics2016.pdf">
-                A Positioning System for Photodiode Device Using Collocated LEDs</a>
-        </hpub>
-        <br />
-        Samer Saab Jr. and <b>Khaled Saab</b><br />
-        IEEE Photonics Journal, 2016.
-    </div>
-
-
-<p style="font-size:12px; margin-left: 5%">( * Equal Contributors)</p>
-
+<div id="khaled-citations">
+<main class="pub-sheet">
+  <div class="intro">
+    <header class="profile"><img src="headshot.jpeg" alt="Khaled Saab"><div>
+      <h1>Khaled Saab</h1>
+<p>I am currently a Member of Technical Staff at OpenAI.  Previously, I was a Research Scientist at Google DeepMind. I received my PhD and MS in Electrical Engineering from Stanford in 2023 and 2019, and BS in Computer Engineering from Georgia Tech in 2017. At Stanford, I was lucky to be advised by  <a href="https://rubinlab.stanford.edu/" target="_blank" rel="noopener">Daniel Rubin</a> and <a href="https://cs.stanford.edu/people/chrismre/" target="_blank" rel="noopener">Chris Ré</a>.</p>
+      <p>My current research focuses on accelerating biomedical intelligence.</p>      <nav aria-label="Profiles" class="profile-nav"><a href="https://www.linkedin.com/in/khaled-saab-181034122/" target="_blank" rel="noopener">LinkedIn</a><a href="https://scholar.google.com/citations?user=W77CiNUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://x.com/_khaledsaab" target="_blank" rel="noopener">X</a></nav>
+    </div></header>
+    <section class="news" aria-labelledby="ks-news"><h2 id="ks-news">News</h2><ul>
+<li> <span>[October 2026] In <a href="https://doi.org/10.1016/S0140-6736(26)01535-7" target="_blank" rel="noopener">our prospective study in <i>The Lancet</i></a>, patients shared their medical histories with AMIE before their primary care visits at Beth Israel Deaconess Medical Center.</span></li>
+      <li> <span>[May 2026] Our <a href="https://www.nature.com/articles/s41591-026-04371-0" target="_blank" rel="noopener">multimodal AMIE paper</a> is out in <i>Nature Medicine</i>. AMIE can discuss photos, ECGs, and clinical documents during a diagnostic conversation.</span></li>
+      <li> <span>[April 2026] We introduced <a href="https://arxiv.org/abs/2604.27470" target="_blank" rel="noopener">HealthBench Professional</a>, a benchmark built from clinical questions, writing tasks, and research requests that clinicians bring to ChatGPT.</span></li>
+      <li> <span>[February 2026] In <a href="https://doi.org/10.1002/advs.202518656" target="_blank" rel="noopener">our <i>Advanced Science</i> paper</a>, we studied how language models can help identify genetic causes of rare diseases.</span></li>
+      <li> <span>[May 2025] <a href="https://arxiv.org/abs/2505.04653" target="_blank" rel="noopener">AMIE</a> gains vision!</span></li>
+      <li> <span>[April 2025] <a href="https://www.nature.com/articles/s41586-025-08866-7" target="_blank" rel="noopener">AMIE</a> is published in Nature!</span></li>
+      <li> <span>[March 2025] Advancing <a href="https://arxiv.org/abs/2503.06074" target="_blank" rel="noopener">AMIE</a> for longitudinal disease management.</span></li>
+      <li> <span>[April 2024] Introducing <a href="https://arxiv.org/abs/2404.18416" target="_blank" rel="noopener">Med-Gemini</a>, our latest family of multimodal models that extend the best of Gemini into medicine!</span></li>
+      <li> <span>[January 2024] Announcing <a href="https://arxiv.org/abs/2401.05654" target="_blank" rel="noopener">AMIE</a>, a diagnostic conversational LLM that surpassed Primary Care Physicians in conversational quality &amp; diagnostic accuracy in a blind randomized study.</span></li>
+      <li> <span>[September 2023] Submit my PhD dissertation at Stanford!</span></li>    </ul></section>
+  </div>
+  <section aria-labelledby="ks-pubs">
+    <header class="pub-heading"><h2 id="ks-pubs">Publications</h2></header>
+    <section class="pub-group" data-year="2026" aria-labelledby="ks-year-2026">
+      <h3 id="ks-year-2026" class="pub-year">2026</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">The Lancet</span>
+            <span class="pub-date">October 2026</span>
+<span class="citation-detail">408, 1732–1744</span>          </div>
+          <h4><a href="https://doi.org/10.1016/S0140-6736(26)01535-7" target="_blank" rel="noopener">Conversational diagnostic artificial intelligence in ambulatory primary care: a prospective feasibility study</a></h4>
+          <details><summary><span class="byline">Peter G. Brodeur, Jacob M. Koshy, Anil Palepu, <strong>Khaled Saab</strong>, … Adam Rodman</span>
+            <span class="disclose"><span class="closed-label">All 48 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Peter G. Brodeur, Jacob M. Koshy, Anil Palepu, <strong>Khaled Saab</strong>, Ava Homiar, Roma Ruparel, Charles Wu, Ryutaro Tanno, Joseph Xu, Amy Wang, David Stutz, Wei-Hung Weng, Hannah M. Ferrera, David Barrett, Lindsey Crowley, Jihyeon Lee, Spencer E. Rittner, Ellery Wulczyn, Selena K. Zhang, Elahe Vedadi, Christine G. Kohn, Kavita Kulkarni, Vinay Kadiyala, S. Sara Mahdavi, Wendy Du, Jessica M. Williams, David Feinbloom, Renee Wong, Tao Tu, Petar Sirkovic, Alessio Orlandi, Christopher Semturs, Yun Liu, Juraj Gottweis, Dale R. Webster, Joëlle Barral, Katherine Chou, Pushmeet Kohli, Avinatan Hassidim, Yossi Matias, James Manyika, Rob Fields, Jonathan X. Li, Marc L. Cohen, Vivek Natarajan, Mike Schaekermann, Alan Karthikesalingam, Adam Rodman</p>
+          </details>
+<div class="pub-links"><a href="https://arxiv.org/abs/2603.08448" target="_blank" rel="noopener">arXiv</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">June 2026</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2606.24014" target="_blank" rel="noopener">Reinforcement Learning Towards Broadly and Persistently Beneficial Models</a></h4>
+<p class="byline">Akshay V. Jagadeesh, Rahul K. Arora, <strong>Khaled Saab</strong>, Ali Malik, Mikhail Trofimov, Foivos Tsimpourlas, Johannes Heidecke, Karan Singhal</p><div class="pub-links"><a href="https://openai.com/safety-alignment/beneficial-rl/" target="_blank" rel="noopener">Research blog</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Nature</span>
+            <span class="pub-date">June 2026</span>
+<span class="citation-detail">655, 1292–1299</span>          </div>
+          <h4><a href="https://www.nature.com/articles/s41586-026-10764-5" target="_blank" rel="noopener">Towards conversational artificial intelligence for disease management</a></h4>
+          <details><summary><span class="byline">Valentin Liévin*, Anil Palepu*, Wei-Hung Weng, <strong>Khaled Saab</strong>, … Mike Schaekermann</span>
+            <span class="disclose"><span class="closed-label">All 20 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Valentin Liévin*, Anil Palepu*, Wei-Hung Weng, <strong>Khaled Saab</strong>, David Stutz, Yong Cheng, Kavita Kulkarni, S. Sara Mahdavi, Joëlle Barral, Dale R. Webster, Katherine Chou, Avinatan Hassidim, Yossi Matias, James Manyika, Ryutaro Tanno, Vivek Natarajan, Adam Rodman, Tao Tu, Alan Karthikesalingam, Mike Schaekermann</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://arxiv.org/abs/2503.06074" target="_blank" rel="noopener">arXiv</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Nature</span>
+            <span class="pub-date">May 2026</span>
+<span class="citation-detail">655, 487–496</span>          </div>
+          <h4><a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noopener">Accelerating scientific discovery with Co-Scientist</a></h4>
+          <details><summary><span class="byline">Juraj Gottweis*, Wei-Hung Weng*, Alexander Daryin*, Tao Tu*, … <strong>Khaled Saab</strong>, … Vivek Natarajan</span>
+            <span class="disclose"><span class="closed-label">All 51 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Juraj Gottweis*, Wei-Hung Weng*, Alexander Daryin*, Tao Tu*, Petar Sirkovic*, Artiom Myaskovsky*, Grzegorz Glowaty*, Felix Weissenberger*, Alessio Orlandi*, Dan Popovici, Anil Palepu, Keran Rong, Ryutaro Tanno, <strong>Khaled Saab</strong>, Fan Zhang, Jacob Blum, Andrew Carroll, Kavita Kulkarni, Nenad Tomašev, Dina Zverinski, Ivor Rendulic, Elahe Vedadi, Florian Hasler, Luka Rimanic, Marina Boia, Ivan Budiselic, Ben Feinstein, Mathias Bellaiche, Tom Sheffer, Jan Freyberg, Jeremy Ratcliff, Ottavia Bertolli, Katherine Chou, Avinatan Hassidim, Burak Gokturk, Amin Vahdat, Yuan Guan, Vikram Dhillon, Eeshit Dhaval Vaishnav, Byron Lee, Tiago R. D. Costa, José R. Penadés, Gary Peltz, Yossi Matias, James Manyika, Demis Hassabis, Yunhan Xu, Pushmeet Kohli, Annalisa Pawlosky, Alan Karthikesalingam, Vivek Natarajan</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://arxiv.org/abs/2502.18864" target="_blank" rel="noopener">arXiv</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Nature Medicine</span>
+            <span class="pub-date">May 2026</span>
+<span class="citation-detail">32, 1726–1736</span>          </div>
+          <h4><a href="https://www.nature.com/articles/s41591-026-04371-0" target="_blank" rel="noopener">Advancing conversational diagnostic AI with multimodal reasoning</a></h4>
+          <details><summary><span class="byline"><strong>Khaled Saab*</strong>, Chunjong Park*, Tim Strother*, Jan Freyberg*, … Ryutaro Tanno*</span>
+            <span class="disclose"><span class="closed-label">All 36 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline"><strong>Khaled Saab*</strong>, Chunjong Park*, Tim Strother*, Jan Freyberg*, David G. T. Barrett, Yong Cheng, Wei-Hung Weng, David Stutz, Nenad Tomasev, Anil Palepu, Valentin Liévin, Yash Sharma, Roma Ruparel, Abdullah Ahmed, Elahe Vedadi, Kimberly Kanada, Cian Hughes, Yun Liu, Geoff Brown, Yang Gao, Sean Li, S. Sara Mahdavi, James Manyika, Katherine Chou, Yossi Matias, Avinatan Hassidim, Dale R. Webster, Joëlle Barral, S. M. Ali Eslami, Pushmeet Kohli, Adam Rodman, Vivek Natarajan, Mike Schaekermann, Tao Tu, Alan Karthikesalingam, Ryutaro Tanno*</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://arxiv.org/abs/2505.04653" target="_blank" rel="noopener">arXiv</a><a href="https://research.google/blog/amie-gains-vision-a-research-ai-agent-for-multi-modal-diagnostic-dialogue/" target="_blank" rel="noopener">Research blog</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">April 2026</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2604.27470" target="_blank" rel="noopener">HealthBench Professional: Evaluating Large Language Models on Real Clinician Chats</a></h4>
+          <details><summary><span class="byline">Rebecca Soskin Hicks, Mikhail Trofimov, Dominick Lim, Rahul K. Arora, … <strong>Khaled Saab</strong>, … Karan Singhal</span>
+            <span class="disclose"><span class="closed-label">All 16 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Rebecca Soskin Hicks, Mikhail Trofimov, Dominick Lim, Rahul K. Arora, Foivos Tsimpourlas, Preston Bowman, Michael Sharman, Chi Tong, Kavin Karthik, Arnav Dugar, Akshay Jagadeesh, <strong>Khaled Saab</strong>, Johannes Heidecke, Ashley Alexander, Nate Gross, Karan Singhal</p>
+          </details>
+<div class="pub-links"><a href="https://openai.com/index/making-chatgpt-better-for-clinicians/" target="_blank" rel="noopener">Research blog</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Advanced Science</span>
+            <span class="pub-date">February 2026</span>
+<span class="citation-detail">13, e18656</span>          </div>
+          <h4><a href="https://doi.org/10.1002/advs.202518656" target="_blank" rel="noopener">Genetic Diagnosis and Discovery Enabled by Large Language Models</a></h4>
+          <details><summary><span class="byline">Tao Tu*, <strong>Khaled Saab*</strong>, Weida Liu*, Zhouqing Fang*, … Gary Peltz</span>
+            <span class="disclose"><span class="closed-label">All 26 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Tao Tu*, <strong>Khaled Saab*</strong>, Weida Liu*, Zhouqing Fang*, Zhuanfen Cheng, Svetolik Spasic, Maja Djurisic, Hiroaki Mohri, Wenlong Ren, Anil Palepu, Juraj Gottweis, Alan Karthikesalingam, Kavita Kulkarni, Annalisa Pawlosky, Devon Bonner, Elijah Kravets, Shruti Marwaha, Hector R. Mendez, Matthew T. Wheeler, Jonathan A. Bernstein, Undiagnosed Diseases Network, Cheng-Yu Tsai, Chen-Chi Wu, Konstantina M. Stankovic, Vivek Natarajan, Gary Peltz</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Nature Medicine</span>
+            <span class="pub-date">February 2026</span>
+<span class="citation-detail">32, 616–623</span>          </div>
+          <h4><a href="https://www.nature.com/articles/s41591-025-04190-9" target="_blank" rel="noopener">A large language model for complex cardiology care</a></h4>
+          <details><summary><span class="byline">Jack W. O’Sullivan*, Anil Palepu*, <strong>Khaled Saab</strong>, Wei-Hung Weng, … Tao Tu</span>
+            <span class="disclose"><span class="closed-label">All 34 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Jack W. O’Sullivan*, Anil Palepu*, <strong>Khaled Saab</strong>, Wei-Hung Weng, Daniel K. Amponsah, Evaline Cheng, Yong Cheng, Emily Chu, Yaanik Desai, Aly Elezaby, Muhammad Fazal, Tasmeen Hussain, Sneha S. Jain, Daniel Seung Kim, Roy Lan, Jiwen Li, Wilson Tang, Natalie Tapaskar, Victoria Parikh, Ryan Sandoval, Gabriella Spencer-Bonilla, Bryan Wu, Kavita Kulkarni, Philip Mansfield, Dale Webster, Juraj Gottweis, Joelle Barral, Mike Schaekermann, Ryutaro Tanno, S. Sara Mahdavi, Vivek Natarajan, Alan Karthikesalingam, Euan Ashley, Tao Tu</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://arxiv.org/abs/2410.03741" target="_blank" rel="noopener">arXiv</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2025" aria-labelledby="ks-year-2025">
+      <h3 id="ks-year-2025" class="pub-year">2025</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">October 2025</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2510.22414" target="_blank" rel="noopener">Complementary Human-AI Clinical Reasoning in Ophthalmology</a></h4>
+          <details><summary><span class="byline">Mertcan Sevgi, Fares Antaki, Abdullah Zafar Khan, Ariel Yuhan Ong, … <strong>Khaled Saab</strong>, … Wei-Hung Weng</span>
+            <span class="disclose"><span class="closed-label">All 29 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Mertcan Sevgi, Fares Antaki, Abdullah Zafar Khan, Ariel Yuhan Ong, David Adrian Merle, Kuang Hu, Shafi Balal, Sophie-Christin Kornelia Ernst, Josef Huemer, Gabriel T. Kaufmann, Hagar Khalid, Faye Levina, Celeste Limoli, Ana Paula Ribeiro Reis, Samir Touma, Anil Palepu, <strong>Khaled Saab</strong>, Ryutaro Tanno, Valentin Liévin, Tao Tu, Yong Cheng, Mike Schaekermann, S. Sara Mahdavi, Elahe Vedadi, David Stutz, Vivek Natarajan, Alan Karthikesalingam, Pearse A. Keane, Wei-Hung Weng</p>
+          </details>
+        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">NEJM AI</span>
+            <span class="pub-date">October 2025</span>
+<span class="citation-detail">2, AIcs2500025</span>          </div>
+          <h4><a href="https://doi.org/10.1056/AIcs2500025" target="_blank" rel="noopener">Exploring Large Language Models for Specialist-Level Oncology Care</a></h4>
+          <details><summary><span class="byline">Anil Palepu, Vikram Dhillon, Polly Niravath, Wei-Hung Weng, Preethi Prasad, <strong>Khaled Saab</strong>, … Tao Tu</span>
+            <span class="disclose"><span class="closed-label">All 21 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Anil Palepu, Vikram Dhillon, Polly Niravath, Wei-Hung Weng, Preethi Prasad, <strong>Khaled Saab</strong>, Ryutaro Tanno, Yong Cheng, Hanh Mai, Ethan Burns, Zainub Ajmal, Kavita Kulkarni, Philip Mansfield, Dale Webster, Joelle Barral, Juraj Gottweis, Mike Schaekermann, Sara S. Mahdavi, Vivek Natarajan, Alan Karthikesalingam, Tao Tu</p>
+          </details>
+<div class="pub-links"><a href="https://arxiv.org/abs/2411.03395" target="_blank" rel="noopener">arXiv</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">July 2025</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2507.15743" target="_blank" rel="noopener">Towards physician-centered oversight of conversational diagnostic AI</a></h4>
+          <details><summary><span class="byline">Elahe Vedadi, David Barrett, Natalie Harris, Ellery Wulczyn, … <strong>Khaled Saab</strong>, … David Stutz</span>
+            <span class="disclose"><span class="closed-label">All 35 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Elahe Vedadi, David Barrett, Natalie Harris, Ellery Wulczyn, Shashir Reddy, Roma Ruparel, Mike Schaekermann, Tim Strother, Ryutaro Tanno, Yash Sharma, Jihyeon Lee, Cían Hughes, Dylan Slack, Anil Palepu, Jan Freyberg, <strong>Khaled Saab</strong>, Valentin Liévin, Wei-Hung Weng, Tao Tu, Yun Liu, Nenad Tomasev, Kavita Kulkarni, S. Sara Mahdavi, Kelvin Guu, Joëlle Barral, Dale R. Webster, James Manyika, Avinatan Hassidim, Katherine Chou, Yossi Matias, Pushmeet Kohli, Adam Rodman, Vivek Natarajan, Alan Karthikesalingam, David Stutz</p>
+          </details>
+<div class="pub-links"><a href="https://research.google/blog/enabling-physician-centered-oversight-for-amie/" target="_blank" rel="noopener">Research blog</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">bioRxiv preprint</span>
+            <span class="pub-date">July 2025 (revised July 2026)</span>
+          </div>
+          <h4><a href="https://www.biorxiv.org/content/10.1101/2025.07.16.665231v2" target="_blank" rel="noopener">Human whole-epigenome modelling for clinical applications with Pleiades</a></h4>
+          <details><summary><span class="byline">Pouya Niki, Christoforos Nalmpantis, Javkhlan-Ochir Ganbat, Donal Byrne, … <strong>Khaled Saab</strong>, … Ravi Solanki</span>
+            <span class="disclose"><span class="closed-label">All 34 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Pouya Niki, Christoforos Nalmpantis, Javkhlan-Ochir Ganbat, Donal Byrne, Pooja Kathail, Ching Fang, Alfred Wong, Andrey Karailiev, Husam Babikir, Anjeet Jhutty, Luca Giacomoni, Francisco M. Marín-Zamora, Arihant Kamdar, Nicholas K. Wang, Will Rowe, Timing Liu, Netanel Loyfer, Robert Sugar, Augustinas Malinauskas, <strong>Khaled Saab</strong>, Mark Bissell, Dron Hazra, Michael T. Pearce, Archa Jain, Daniel Balsam, Sofia Toniolo, Masud Husain, Sanjay G. Manohar, Sian A. Thompson, Henrik Zetterberg, Hannah Madan, Ivan Koychev, Jonathan C. M. Wan, Ravi Solanki</p>
+          </details>
+        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Nature</span>
+            <span class="pub-date">April 2025</span>
+<span class="citation-detail">642, 442–450</span>          </div>
+          <h4><a href="https://www.nature.com/articles/s41586-025-08866-7" target="_blank" rel="noopener">Towards conversational diagnostic artificial intelligence</a></h4>
+          <details><summary><span class="byline">Tao Tu*, Mike Schaekermann*, Anil Palepu*, <strong>Khaled Saab</strong>, … Vivek Natarajan</span>
+            <span class="disclose"><span class="closed-label">All 26 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Tao Tu*, Mike Schaekermann*, Anil Palepu*, <strong>Khaled Saab</strong>, Jan Freyberg, Ryutaro Tanno, Amy Wang, Brenna Li, Mohamed Amin, Yong Cheng, Elahe Vedadi, Nenad Tomasev, Shekoofeh Azizi, Karan Singhal, Le Hou, Albert Webson, Kavita Kulkarni, S. Sara Mahdavi, Christopher Semturs, Juraj Gottweis, Joelle Barral, Katherine Chou, Greg S. Corrado, Yossi Matias, Alan Karthikesalingam, Vivek Natarajan</p>
+          </details>
+<div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://arxiv.org/abs/2401.05654" target="_blank" rel="noopener">arXiv</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">April 2025</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2504.02799" target="_blank" rel="noopener">Systematic Evaluation of Large Vision-Language Models for Surgical Artificial Intelligence</a></h4>
+          <details><summary><span class="byline">Anita Rau, Mark Endo, Josiah Aklilu, Jaewoo Heo, <strong>Khaled Saab</strong>, … Serena Yeung-Levy</span>
+            <span class="disclose"><span class="closed-label">All 9 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Anita Rau, Mark Endo, Josiah Aklilu, Jaewoo Heo, <strong>Khaled Saab</strong>, Alberto Paderno, Jeffrey Jopling, F. Christopher Holsinger, Serena Yeung-Levy</p>
+          </details>
+<div class="pub-links"><a href="https://anitarau.github.io/surg-vlms-eval/" target="_blank" rel="noopener">Project</a><a href="https://github.com/anitarau/SurgBenchKit" target="_blank" rel="noopener">Code</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2024" aria-labelledby="ks-year-2024">
+      <h3 id="ks-year-2024" class="pub-year">2024</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="preprint">arXiv preprint</span>
+            <span class="pub-date">April 2024</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2404.18416" target="_blank" rel="noopener">Capabilities of Gemini Models in Medicine</a></h4>
+          <details><summary><span class="byline"><strong>Khaled Saab</strong>, Tao Tu, Wei-Hung Weng, Ryutaro Tanno, … Vivek Natarajan</span>
+            <span class="disclose"><span class="closed-label">All 66 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline"><strong>Khaled Saab</strong>, Tao Tu, Wei-Hung Weng, Ryutaro Tanno, David Stutz, Ellery Wulczyn, Fan Zhang, Tim Strother, Chunjong Park, Elahe Vedadi, Juanma Zambrano Chaves, Szu-Yeu Hu, Mike Schaekermann, Aishwarya Kamath, Yong Cheng, David G.T. Barrett, Cathy Cheung, Basil Mustafa, Anil Palepu, Daniel McDuff, Le Hou, Tomer Golany, Luyang Liu, Jean-baptiste Alayrac, Neil Houlsby, Nenad Tomasev, Jan Freyberg, Charles Lau, Jonas Kemp, Jeremy Lai, Shekoofeh Azizi, Kimberly Kanada, SiWai Man, Kavita Kulkarni, Ruoxi Sun, Siamak Shakeri, Luheng He, Ben Caine, Albert Webson, Natasha Latysheva, Melvin Johnson, Philip Mansfield, Jian Lu, Ehud Rivlin, Jesper Anderson, Bradley Green, Renee Wong, Jonathan Krause, Jonathon Shlens, Ewa Dominowska, S. M. Ali Eslami, Claire Cui, Oriol Vinyals, Koray Kavukcuoglu, James Manyika, Jeff Dean, Demis Hassabis, Yossi Matias, Dale Webster, Joelle Barral, Greg Corrado, Christopher Semturs, S. Sara Mahdavi, Juraj Gottweis, Alan Karthikesalingam, and Vivek Natarajan</p>
+          </details>
+        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">npj Digital Medicine</span>
+            <span class="pub-date">2024</span>
+          </div>
+          <h4><a href="https://www.nature.com/articles/s41746-024-01008-9" target="_blank" rel="noopener">Towards Trustworthy Seizure Onset Detection Using Workflow Notes</a></h4>
+<p class="byline"><strong>Khaled Saab</strong>, Siyi Tang, Mohamed Taha, Christopher Lee-Messer, Christopher Ré, and Daniel Rubin</p><div class="pub-links"><a href="https://github.com/khaledsaab/eeg_robustness" target="_blank" rel="noopener">Code</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2023" aria-labelledby="ks-year-2023">
+      <h3 id="ks-year-2023" class="pub-year">2023</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Neural Information Processing Systems (NeurIPS)</span>
+            <span class="pub-date">2023</span>
+          </div>
+          <h4><a href="https://openreview.net/pdf?id=b8xowIlZ7v" target="_blank" rel="noopener">A Case for Reframing Automated Medical Image Classification as Segmentation</a></h4>
+<p class="byline">Sarah Hooper, Mayee Chen, <strong>Khaled Saab</strong>, Kush Bhatia, Curt Langlotz, and Christopher Ré</p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">International Conference on Learning Representations (ICLR)</span>
+            <span class="pub-date">2023</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2303.09489" target="_blank" rel="noopener">Effectively Modeling Time Series with Simple Discrete State Spaces</a></h4>
+<p class="byline">Michael Zhang*, <strong>Khaled Saab*</strong>, Michael Poli, Tri Dao, Karan Goel, and Christopher Ré</p><div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://github.com/HazyResearch/spacetime" target="_blank" rel="noopener">Code</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">International Conference on Learning Representations (ICLR)</span>
+            <span class="pub-date">2023</span>
+<span class="citation-detail recognition">Spotlight</span>          </div>
+          <h4><a href="https://arxiv.org/abs/2212.14052" target="_blank" rel="noopener">Hungry Hungry Hippos: Towards Language Modeling with State Space Models</a></h4>
+<p class="byline">Tri Dao*, Dan Fu*, <strong>Khaled Saab</strong>, Armin Thomas, Atri Rudra, and Christopher Ré</p><div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://hazyresearch.stanford.edu/blog/2023-01-20-h3" target="_blank" rel="noopener">Research blog</a><a href="https://github.com/HazyResearch/H3" target="_blank" rel="noopener">Code</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Conference on Health, Inference, and Learning (CHIL)</span>
+            <span class="pub-date">2023</span>
+<span class="citation-detail recognition">Best Paper</span>          </div>
+          <h4><a href="https://arxiv.org/abs/2211.11176" target="_blank" rel="noopener">Spatiotemporal Modeling of Multivariate Signals With Graph Neural Networks and Structured State Space Models</a></h4>
+<p class="byline">Siyi Tang, Jared Dunnmon, Liangqiong Qu, <strong>Khaled Saab</strong>, Tina Baykaner, Christopher Lee-Messer, and Daniel Rubin</p><div class="pub-links"><a href="https://github.com/tsy935/graphs4mer" target="_blank" rel="noopener">Code</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2022" aria-labelledby="ks-year-2022">
+      <h3 id="ks-year-2022" class="pub-year">2022</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Machine Learning for Healthcare (MLHC)</span>
+            <span class="pub-date">2022</span>
+          </div>
+          <h4><a href="https://proceedings.mlr.press/v182/saab22a/saab22a.pdf" target="_blank" rel="noopener">Reducing Reliance on Spurious Features in Medical Image Classification with Spatial Specificity</a></h4>
+<p class="byline"><strong>Khaled Saab</strong>, Sarah Hooper, Mayee Chen, Michael Zhang, Daniel Rubin, and Christopher Ré</p><div class="pub-links"><a href="https://github.com/khaledsaab/spatial_specificity" target="_blank" rel="noopener">Code</a><a href="https://www.youtube.com/embed/9uDsWp-CEzc" target="_blank" rel="noopener">Video</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">International Conference on Learning Representations (ICLR)</span>
+            <span class="pub-date">2022</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2104.08336" target="_blank" rel="noopener">Self-Supervised Graph Neural Networks for Improved Electroencephalographic Seizure Analysis</a></h4>
+<p class="byline">Siyi Tang, Jared Dunnmon, <strong>Khaled Saab</strong>, Xuan Zhang, Qianying Huang, Florian Dubost, Daniel Rubin, and Christopher Lee-Messer</p><div class="pub-links"><a href="https://github.com/tsy935/eeg-gnn-ssl" target="_blank" rel="noopener">Code</a><a href="https://youtu.be/FMEnSYbKkV4" target="_blank" rel="noopener">Video</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">International Conference on Learning Representations (ICLR)</span>
+            <span class="pub-date">2022</span>
+<span class="citation-detail recognition">Oral</span>          </div>
+          <h4><a href="https://arxiv.org/abs/2203.14960" target="_blank" rel="noopener">Domino: Discovering Systematic Errors with Cross-Modal Embeddings</a></h4>
+<p class="byline">Sabri Eyuboglu*, Maya Varma*, <strong>Khaled Saab*</strong>, Jean-Benoit Delbrouck, Christopher Lee-Messer, Jared Dunnmon, James Zou, and Christopher Ré</p><div class="pub-annotation">* Equal contribution</div><div class="pub-links"><a href="https://github.com/hazyresearch/domino" target="_blank" rel="noopener">Code</a><a href="https://hazyresearch.stanford.edu/blog/2022-04-02-domino" target="_blank" rel="noopener">Research blog</a><a href="https://iclr.cc/virtual/2022/oral/6149" target="_blank" rel="noopener">Video</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Association for Computational Linguistics (ACL) Demo Track</span>
+            <span class="pub-date">2022</span>
+          </div>
+          <h4><a href="https://aclanthology.org/2022.acl-demo.3.pdf" target="_blank" rel="noopener">ViLMedic: A Framework for Research at the Intersection of Vision and Language in Medical AI</a></h4>
+          <details><summary><span class="byline">Jean-Benoit Delbrouck, <strong>Khaled Saab</strong>, Maya Varma, Sabri Eyuboglu, … Curtis Langlotz</span>
+            <span class="disclose"><span class="closed-label">All 9 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Jean-Benoit Delbrouck, <strong>Khaled Saab</strong>, Maya Varma, Sabri Eyuboglu, Pierre Chambon, Jared Alexander Dunnmon, Juan Manuel Zambrano, Akshay Chaudhari, and Curtis Langlotz</p>
+          </details>
+<div class="pub-links"><a href="https://github.com/jbdel/vilmedic" target="_blank" rel="noopener">Code</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Neural Networks</span>
+            <span class="pub-date">2022</span>
+          </div>
+          <h4><a href="https://www.me.psu.edu/Ray/journalAsokRay/2022/328SaabSaabPhohaZhuRay22.pdf" target="_blank" rel="noopener">A multivariate adaptive gradient algorithm with reduced tuning efforts</a></h4>
+<p class="byline">Samer Saab Jr, <strong>Khaled Saab</strong>, Shashi Phoha, Minghui Zhu, and Asok Ray</p>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2021" aria-labelledby="ks-year-2021">
+      <h3 id="ks-year-2021" class="pub-year">2021</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Neural Information Processing Systems (NeurIPS)</span>
+            <span class="pub-date">2021</span>
+          </div>
+          <h4><a href="https://arxiv.org/abs/2110.13985" target="_blank" rel="noopener">Combining Recurrent, Convolutional, and Continuous-time Models with Structured Learned Linear State-Space Layers</a></h4>
+<p class="byline">Albert Gu, Isys Johnson, Karan Goel, <strong>Khaled Saab</strong>, Tri Dao, Atri Rudra, and Christopher Ré</p><div class="pub-links"><a href="https://hazyresearch.stanford.edu/blog/2022-01-14-s4-3" target="_blank" rel="noopener">Research blog</a><a href="https://github.com/HazyResearch/state-spaces" target="_blank" rel="noopener">Code</a></div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Medical Image Computing and Computer Assisted Intervention (MICCAI)</span>
+            <span class="pub-date">2021</span>
+<span class="citation-detail recognition">Early Accept</span>          </div>
+          <h4><a href="https://rdcu.be/cyl27" target="_blank" rel="noopener">Observational Supervision for Medical Image Classification Using Gaze Data</a></h4>
+          <details><summary><span class="byline"><strong>Khaled Saab</strong>, Sarah Hooper, Nimit Sohoni, Jupinder Parmar, … Christopher Ré</span>
+            <span class="disclose"><span class="closed-label">All 10 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline"><strong>Khaled Saab</strong>, Sarah Hooper, Nimit Sohoni, Jupinder Parmar, Brian Pogatchnik, Sen Wu, Jared Dunnmon, Hongyang Zhang, Daniel Rubin, and Christopher Ré</p>
+          </details>
+<div class="pub-links"><a href="https://github.com/HazyResearch/observational" target="_blank" rel="noopener">Code</a><a href="https://www.youtube.com/embed/va99KCqMbcA?start=60" target="_blank" rel="noopener">Video</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2020" aria-labelledby="ks-year-2020">
+      <h3 id="ks-year-2020" class="pub-year">2020</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">npj Digital Medicine</span>
+            <span class="pub-date">2020</span>
+          </div>
+          <h4><a href="https://www.nature.com/articles/s41746-020-0264-0" target="_blank" rel="noopener">Weak Supervision as an Efficient Approach for Automated Seizure Detection in Electroencephalography</a></h4>
+<p class="byline"><strong>Khaled Saab*</strong>, Jared Dunnmon*, Christopher Ré, Daniel Rubin, and Christopher Lee-Messer</p><div class="pub-annotation">* Equal contribution</div>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Cell Patterns</span>
+            <span class="pub-date">2020</span>
+          </div>
+          <h4><a href="https://tinyurl.com/y95ctxw9" target="_blank" rel="noopener">Cross-Modal Data Programming Enables Rapid Medical Machine Learning</a></h4>
+          <details><summary><span class="byline">Jared Dunnmon, Alex Ratner, <strong>Khaled Saab</strong>, Nishit Khandwala, … Christopher Ré</span>
+            <span class="disclose"><span class="closed-label">All 11 authors</span><span class="open-label">Hide full author list</span></span></summary>
+            <p class="full-byline">Jared Dunnmon, Alex Ratner, <strong>Khaled Saab</strong>, Nishit Khandwala, Matthew Markert, Hersh Sagreiya, Rodger Goldman, Christopher Lee-Messer, Matthew Lungren, Daniel Rubin, and Christopher Ré</p>
+          </details>
+<div class="pub-links"><a href="https://github.com/HazyResearch/cross-modal-ws-demo" target="_blank" rel="noopener">Code</a></div>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2019" aria-labelledby="ks-year-2019">
+      <h3 id="ks-year-2019" class="pub-year">2019</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">Medical Image Computing and Computer Assisted Intervention (MICCAI)</span>
+            <span class="pub-date">2019</span>
+<span class="citation-detail recognition">Oral</span>          </div>
+          <h4><a href="media/MICCAI_2019.pdf" target="_blank" rel="noopener">Doubly Weak Supervision of Deep Learning Models for Head CT</a></h4>
+<p class="byline"><strong>Khaled Saab</strong>, Jared Dunnmon, Roger Goldman, Alex Ratner, Hersh Sagreiya, Christopher Ré, and Daniel Rubin</p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">ICLR Limited Labeled Data Workshop</span>
+            <span class="pub-date">2019</span>
+<span class="citation-detail recognition">Spotlight</span>          </div>
+          <h4><a href="media/ICLR_LLD_2019.pdf" target="_blank" rel="noopener">Improving Sample Complexity with Observational Supervision</a></h4>
+<p class="byline"><strong>Khaled Saab</strong>, Jared Dunnmon, Alex Ratner, Daniel Rubin, and Christopher Ré</p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE Conference on Information Sciences and Systems</span>
+            <span class="pub-date">2019</span>
+          </div>
+          <h4><a href="media/IEEE_CISS2019.pdf" target="_blank" rel="noopener">Shuffled Linear Regression with Erroneous Observations</a></h4>
+<p class="byline">Samer Saab, <strong>Khaled Saab</strong>, and Samer Saab Jr.</p>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2017" aria-labelledby="ks-year-2017">
+      <h3 id="ks-year-2017" class="pub-year">2017</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE Symposium on Security and Privacy</span>
+            <span class="pub-date">2017</span>
+          </div>
+          <h4><a href="media/IEEE_SSP2017.pdf" target="_blank" rel="noopener">Protecting Bare-metal Embedded Systems with Privilege Overlays</a></h4>
+<p class="byline">Abraham Clements, Naif Almakhdhub, <strong>Khaled Saab</strong>, Prashast Srivastava, Jinkyu Koo, Saurabh Bagchi, and Mathias Payer</p>        </article>
+      </div>
+    </section>
+    <section class="pub-group" data-year="2016" aria-labelledby="ks-year-2016">
+      <h3 id="ks-year-2016" class="pub-year">2016</h3>
+      <div class="pub-items">
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE Signal Processing Letters</span>
+            <span class="pub-date">2016</span>
+          </div>
+          <h4><a href="media/IEEE_SPL2016.pdf" target="_blank" rel="noopener">A Stochastic Newton-Raphson Method with Noisy Function Measurements</a></h4>
+<p class="byline"><strong>Khaled Saab</strong> and Samer Saab Jr.</p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE/ION Position, Location and Navigation Symposium</span>
+            <span class="pub-date">2016</span>
+          </div>
+          <h4><a href="media/IEEE_PLANS2016.pdf" target="_blank" rel="noopener">Application of an Optimal Stochastic Newton-Raphson Technique to Triangulation-Based Localization Systems</a></h4>
+<p class="byline"><strong>Khaled Saab</strong> and Samer Saab Jr.</p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE MIT Undergraduate Research Technology Conference</span>
+            <span class="pub-date">2016</span>
+          </div>
+          <h4><a href="media/IEEE_URTC2016.PDF" target="_blank" rel="noopener">Estimation of Cluster Centroids in Presence of Noisy Observations</a></h4>
+<p class="byline"><strong>Khaled Saab</strong></p>        </article>
+        <article>
+          <div class="pub-meta">
+            <span class="journal">IEEE Photonics Journal</span>
+            <span class="pub-date">2016</span>
+          </div>
+          <h4><a href="media/IEEE_J_Photonics2016.pdf" target="_blank" rel="noopener">A Positioning System for Photodiode Device Using Collocated LEDs</a></h4>
+<p class="byline">Samer Saab Jr. and <strong>Khaled Saab</strong></p>        </article>
+      </div>
+    </section>
+  </section>
+</main>
+</div>
 </body>
 </html>
